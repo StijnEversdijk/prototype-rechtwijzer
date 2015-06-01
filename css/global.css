@@ -2995,6 +2995,7 @@ body {
   right: 0;
   background-color: #343646;
   z-index: 999999;
+  pointer-events: none;
   -ms-transform: scale(1, 1);
   -webkit-transform: scale(1, 1);
   transform: scale(1, 1);
@@ -3007,10 +3008,10 @@ body {
     -ms-transform: scale(0, 0);
     -webkit-transform: scale(0, 0);
     transform: scale(0, 0);
-    -webkit-transition: -webkit-transform 0.5s ease-out, opacity 0.3s ease-out;
-    -webkit-transition-delay: 0s, 0.2s;
-    -webkit-transition: -webkit-transform 0.5s ease-out, opacity 0.3s ease-out 0.2s;
-            transition: transform 0.5s ease-out, opacity 0.3s ease-out 0.2s; }
+    -webkit-transition: -webkit-transform 0.6s ease-out, opacity 0.4s ease-out;
+    -webkit-transition-delay: 0.5s, 0.2s;
+    -webkit-transition: -webkit-transform 0.6s ease-out 0.5s, opacity 0.4s ease-out 0.2s;
+            transition: transform 0.6s ease-out 0.5s, opacity 0.4s ease-out 0.2s; }
   #curtain.visible {
     opacity: 1;
     -ms-transform: scale(1, 1);
@@ -3335,19 +3336,20 @@ main {
 
 .view-contact {
   background: #FFFFFF;
-  overflow: hidden; }
+  overflow-x: hidden; }
   .view-contact .question {
     background: #FFFFFF;
     position: relative;
     top: 60px;
     font-size: 18px;
     line-height: 22px;
-    width: calc(320px*3);
+    width: calc(320px*4);
     overflow: hidden;
     *zoom: 1; }
   .view-contact .question-1,
   .view-contact .question-2,
-  .view-contact .question-3 {
+  .view-contact .question-3,
+  .view-contact .result {
     width: 320px;
     float: left;
     position: relative; }
@@ -3406,7 +3408,7 @@ main {
     top: 60; }
   .view-contact footer {
     position: relative;
-    top: 60px;
+    top: 0;
     padding: 30px 30px 60px;
     margin-bottom: 30px; }
     .view-contact footer a {
@@ -3425,15 +3427,9 @@ main {
       .view-contact footer a.active {
         background: #78B0DE; }
   .view-contact .result {
-    background: white;
-    position: absolute;
-    top: 60px;
-    z-index: 999999;
-    min-height: 508px;
-    height: 100%;
-    overflow-y: auto;
-    display: none; }
-    .view-contact .result header {
+    min-height: 100%; }
+    .view-contact .result header,
+    .view-contact .result .button-to-next {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -3442,26 +3438,40 @@ main {
       -webkit-justify-content: space-between;
           -ms-flex-pack: justify;
               justify-content: space-between; }
-      .view-contact .result header h2 {
+      .view-contact .result header .retry-btn,
+      .view-contact .result .button-to-next .retry-btn {
+        background: #343646;
+        margin-left: 15px; }
+      .view-contact .result header .done-btn,
+      .view-contact .result .button-to-next .done-btn {
+        margin-right: 15px; }
+      .view-contact .result header h2,
+      .view-contact .result .button-to-next h2 {
         padding: 0 30px; }
-      .view-contact .result header ul {
+      .view-contact .result header ul,
+      .view-contact .result .button-to-next ul {
         padding: 0 30px 0 0;
         margin: 20px 0 0 0;
         list-style: none; }
-        .view-contact .result header ul li {
+        .view-contact .result header ul li,
+        .view-contact .result .button-to-next ul li {
           display: inline-block;
           font-size: 8px;
           margin: 0 0 0 12px; }
       .view-contact .result header .edit,
-      .view-contact .result header .retry {
+      .view-contact .result header .retry,
+      .view-contact .result .button-to-next .edit,
+      .view-contact .result .button-to-next .retry {
         height: 24px;
         width: 24px;
         margin: 0;
+        display: inline-block;
         background-color: transparent;
         background-image: url(../img/edit.png);
         background-size: contain;
         background-repeat: no-repeat; }
-      .view-contact .result header .retry {
+      .view-contact .result header .retry,
+      .view-contact .result .button-to-next .retry {
         background-image: url(../img/retry.png); }
     .view-contact .result p {
       padding: 0 30px; }
@@ -3486,7 +3496,7 @@ main {
       padding: 15px 0;
       border-radius: 4px;
       line-height: 1;
-      margin: 30px 30px 0; }
+      margin: 15px 30px 30px; }
     .view-contact .result .true.span {
       background: #D9D9D9; }
     .view-contact .result.visible {

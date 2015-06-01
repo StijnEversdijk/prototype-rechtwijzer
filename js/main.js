@@ -15,7 +15,7 @@ $(document).ready(function() {
     }, 300);
   }
 
-  $('#curtain').attr('class', 'hidden');
+  // $('#curtain').attr('class', 'hidden');
 
 });
 
@@ -69,9 +69,10 @@ $('footer a').click(function(){
   } else if ( $('body').hasClass('three') ) {
     $(this).attr('class', '');
     $('body').attr('class', 'ready result');
-    $('.question-3').hide();
+    // $('.question-3').hide();
     $('.result').addClass('visible');
     $('.droparea').empty();
+    $('.question').css('left', '-300%');
   }
 });
 
@@ -81,10 +82,10 @@ $('a').click(handleClick);
     var target = $(e.target).closest('a');
     if( target ) {
       e.preventDefault();
-      $('#curtain').attr('class', 'visible');
-      setTimeout(function(){
+      // $('#curtain').attr('class', 'visible');
+      // setTimeout(function(){
         window.location = target.attr('href');
-      }, 2000);
+      // }, 2000);
   }
 }
 
@@ -97,14 +98,30 @@ $( ".result header .edit" ).click(function(e) {
       $('.result .span').attr('contenteditable','true');
       $('.result .span').attr('class','span true');
       $('.result .span').focus();
+      $('.button-to-next').empty().html('<a href="#" class="done-btn">Done</a><a href="#" class="retry-btn">Retry</a>');
   }
   else {
       $('.result .span').attr('contenteditable','false');
       $('.result .span').attr('class','span');
+      $('.button-to-next').empty().html(' <a href="cards.html">Continue</a>');
   }
 });
 
-$('.result header .retry').click(function(e) {
+$('.button-to-next').on('click', '.done-btn', function(e){
+  e.preventDefault();
+  $('.result .span').attr('contenteditable','false');
+  $('.result .span').attr('class','span');
+  $('.button-to-next').empty().html(' <a href="cards.html">Continue</a>');
+});
+
+$('.button-to-next').on('click', '.retry-btn', function(e){
+
+  e.preventDefault();
+  window.location = 'http://clients.ckdt.nl/hiil/rechtwijzer-mobile/proto-3/index.html';
+
+});
+
+$('.result .retry').click(function(e) {
 
   e.preventDefault();
   window.location = 'http://clients.ckdt.nl/hiil/rechtwijzer-mobile/proto-3/index.html';
