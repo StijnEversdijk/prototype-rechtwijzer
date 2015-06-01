@@ -3421,7 +3421,7 @@ main {
         .view-contact .result header ul li {
           display: inline-block;
           font-size: 8px;
-          margin: 0 2px; }
+          margin: 0 0 0 12px; }
       .view-contact .result header .edit,
       .view-contact .result header .retry {
         height: 24px;
@@ -3436,12 +3436,15 @@ main {
     .view-contact .result p {
       padding: 0 30px; }
     .view-contact .result .rule {
-      font-weight: 700;
+      font-weight: normal;
       font-size: 15px;
       line-height: 18px;
-      margin-bottom: 1em; }
+      margin-bottom: 2em; }
     .view-contact .result .span {
       padding: 15px 30px; }
+      .view-contact .result .span p {
+        padding: 0;
+        margin-bottom: 4px; }
     .view-contact .result a {
       width: calc(100% - 60px);
       background: #78B0DE;

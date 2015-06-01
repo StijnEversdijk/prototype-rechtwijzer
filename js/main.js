@@ -9,7 +9,7 @@ $(document).ready(function() {
   }, 2000);
 
   var oldURL = document.referrer;
-  if ( oldURL === 'http://clients.ckdt.nl/hiil/rechtwijzer-mobile/proto/contact.html') {
+  if ( oldURL === 'http://clients.ckdt.nl/hiil/rechtwijzer-mobile/proto-3/contact.html') {
     setTimeout(function(){
       $('body').addClass('complete');
     }, 300);
@@ -30,11 +30,21 @@ $(function() {
 
   function deleteItem( $item ) {
     var text = $item.data('text');
+    var classes = $item.attr('class');
     $('.droparea').empty();
     $item.css('opacity', 0);
     $('.label').not($item).css('opacity', 1);
     $('.droparea').prepend('<div>' + text + '</div>');
-    $('.result div.span').append('<div class="rule">' + text + '</div>');
+    if($item.hasClass('vraag-1')){
+      $('.result div.span .antwoord-1 span').empty();
+      $('.result div.span .antwoord-1 span').append('<div class="rule">' + text + '</div>');
+    } else if($item.hasClass('vraag-2')){
+      $('.result div.span .antwoord-2 span').empty();
+      $('.result div.span .antwoord-2 span').append('<div class="rule">' + text + '</div>');
+    } else if($item.hasClass('vraag-3')){
+      $('.result div.span .antwoord-3 span').empty();
+      $('.result div.span .antwoord-3 span').append('<div class="rule">' + text + '</div>');
+    }
     $('footer a').addClass('active');
   }
 });
@@ -92,7 +102,7 @@ $( ".result header .edit" ).click(function(e) {
 $('.result header .retry').click(function(e) {
 
   e.preventDefault();
-  window.location = 'http://stijns-macbook-pro.local:5757/index.html';
+  window.location = 'http://clients.ckdt.nl/hiil/rechtwijzer-mobile/proto-3/index.html';
 
 });
 
@@ -101,46 +111,4 @@ $(document).ready(function($) {
     items: 1,
     addClassActive: true
   });
-
-});
-
-// Smoothstate all the things
-// Contents of functions.js
-$(function() {
-  'use strict';
-  var $body = $('html, body'),
-      $page = $('main'),
-      smoothState = $page.smoothState({
-        // Runs when a link has been activated
-        onStart: {
-          duration: 500, // Duration of our animation
-          render: function (url, $container) {
-            // Add your CSS animation reversing class
-            $page.addClass('is-exiting');
-
-            // Restart your animation
-            smoothState.restartCSSAnimations();
-
-            // Scroll user to the top
-            $body.animate({
-              scrollTop: 0
-            });
-          }
-        },
-      onEnd: {
-        duration: 0,
-        render: function (url, $container, $content) {
-          // Remove your CSS animation reversing class
-          $page.removeClass('is-exiting');
-
-          // Inject the new content
-          $container.html($content);
-
-          // Remove cursor
-          $body.css('cursor', 'auto');
-          $body.find('a').css('cursor', 'auto');
-        }
-      }
-      }).data('smoothState');
-      //.data('smoothState') makes public methods available
 });
