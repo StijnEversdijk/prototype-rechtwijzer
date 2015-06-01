@@ -15,6 +15,8 @@ $(document).ready(function() {
     }, 300);
   }
 
+  $('#curtain').attr('class', 'hidden');
+
 });
 
 $(function() {
@@ -79,7 +81,10 @@ $('a').click(handleClick);
     var target = $(e.target).closest('a');
     if( target ) {
       e.preventDefault();
-      window.location = target.attr('href');
+      $('#curtain').attr('class', 'visible');
+      setTimeout(function(){
+        window.location = target.attr('href');
+      }, 2000);
   }
 }
 
