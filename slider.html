@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
+
+<head>
+
+  <!-- Meta -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rechtwijzer 3.0 Mobile</title>
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/img/favicons/avicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="img/favicons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="img/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="img/favicons/favicon-16x16.png" sizes="16x16">
+
+
+  <!-- CSS -->
+  <!-- <link href="css/owl.carousel.css" rel="stylesheet"> -->
+  <!-- <link href="css/owl.theme.css" rel="stylesheet"> -->
+  <link href="css/global.css" rel="stylesheet" />
+
+  <!-- CSS -->
+    <link rel = "stylesheet" href = "default.css" />
+    <link rel = "stylesheet" media = "screen" href = "common.css" />
+
+    <!-- JS -->
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <!-- // <script src = "js/vendor/jquery.easing-1.3.js"></script> -->
+
+    <!-- iosSlider plugin -->
+    <script src = "js/vendor/jquery.iosslider.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+        $('.iosSlider').iosSlider({
+          snapToChildren: true,
+          desktopClickDrag: true,
+          infiniteSlider: true,
+          snapSlideCenter: true,
+          onSlideChange: slideChange
+        });
+
+      });
+
+      function slideChange(args) {
+
+        try {
+          console.log('changed: ' + (args.currentSlideNumber - 1));
+        } catch(err) {
+        }
+
+        $('.indicators .item').removeClass('selected');
+        $('.indicators .item:eq(' + (args.currentSlideNumber - 1) + ')').addClass('selected');
+
+      }
+    </script>
+  <script src="//use.typekit.net/zrb2bzs.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+</head>
+
+<body class="ready">
+
+  <!-- <div id="curtain" class="visible"></div> -->
+
+  <div class='fluidHeight'>
+
+      <div class='sliderContainer'>
+
+        <div class='iosSlider'>
+
+          <div class='slider'>
+
+            <div class='item'>
+              <div class="card active">
+                <div class="complete"></div>
+                <h2>Contact</h2>
+                <p>In this section you can make living and visiting arrangements to make sure your children will grow up in a stable home environment.</p>
+                <a data-type="page-transition" class="card-btn" href="contact.html">Start</a>
+              </div>
+            </div>
+            <div class='item'>
+              <img src='img/family.jpg' />
+            </div>
+            <div class='item'>
+              <img src='img/family.jpg' />
+            </div>
+            <div class='item'>
+              <img src='img/family.jpg' />
+            </div>
+            <div class='item'>
+              <img src='img/family.jpg' />
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script src="js/vendor/jquery.ui.touch-punch.min.js"></script>
+  <!-- // <script src="js/vendor/owl.carousel.min.js"></script> -->
+  <!-- // <script src="js/vendor/jquery.smoothState.js"></script> -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

@@ -15,7 +15,7 @@ $(document).ready(function() {
     }, 300);
   }
 
-  // $('#curtain').attr('class', 'hidden');
+  $('#curtain').attr('class', 'hidden');
 
 });
 
@@ -81,11 +81,18 @@ $('a').click(handleClick);
   function handleClick(e) {
     var target = $(e.target).closest('a');
     if( target ) {
+
       e.preventDefault();
-      // $('#curtain').attr('class', 'visible');
-      // setTimeout(function(){
+      var href = $(this).attr('href');
+      if(!href === '#') {
+        $('#curtain').attr('class', 'visible');
+        setTimeout(function(){
         window.location = target.attr('href');
-      // }, 2000);
+      }, 2000);
+      } else {
+        window.location = target.attr('href');
+      }
+
   }
 }
 
