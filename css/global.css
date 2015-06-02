@@ -3130,10 +3130,11 @@ main {
       width: 100%;
       height: 640px;
       position: absolute;
-      background-image: url(../img/background.png);
+      background-image: url(../img/background-extended.png);
       background-size: 320px 640px;
       background-repeat: no-repeat;
-      z-index: 1; }
+      z-index: 1;
+      padding-bottom: 40px; }
     .view-dialogue .content h2 {
       opacity: 0;
       position: relative;
@@ -3260,7 +3261,8 @@ main {
     z-index: 3;
     width: 100%;
     background: #78B0DE;
-    padding: 40px; }
+    padding: 0 40px 40px;
+    top: 40px; }
     .ready .view-dialogue footer a {
       color: #FFFFFF;
       font-weight: 700;
@@ -3444,10 +3446,10 @@ main {
       .view-contact .result header .retry-btn,
       .view-contact .result .button-to-next .retry-btn {
         background: #343646;
-        margin-left: 15px; }
+        margin-right: 15px; }
       .view-contact .result header .done-btn,
       .view-contact .result .button-to-next .done-btn {
-        margin-right: 15px; }
+        margin-left: 15px; }
       .view-contact .result header h2,
       .view-contact .result .button-to-next h2 {
         padding: 0 30px; }

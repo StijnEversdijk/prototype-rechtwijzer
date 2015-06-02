@@ -9,7 +9,7 @@ $(document).ready(function() {
   }, 2000);
 
   var oldURL = document.referrer;
-  if ( oldURL === 'http://clients.ckdt.nl/hiil/rechtwijzer-mobile/proto-3/contact.html') {
+  if ( oldURL === 'http://clients.ckdt.nl/hiil/rechtwijzer-mobile/proto-4/contact.html') {
     setTimeout(function(){
       $('body').addClass('complete');
     }, 300);
@@ -105,7 +105,7 @@ $( ".result header .edit" ).click(function(e) {
       $('.result .span').attr('contenteditable','true');
       $('.result .span').attr('class','span true');
       $('.result .span').focus();
-      $('.button-to-next').empty().html('<a href="#" class="done-btn">Done</a><a href="#" class="retry-btn">Retry</a>');
+      $('.button-to-next').empty().html('<a href="#" class="retry-btn">Cancel</a><a href="#" class="done-btn">Save</a>');
   }
   else {
       $('.result .span').attr('contenteditable','false');
@@ -124,14 +124,14 @@ $('.button-to-next').on('click', '.done-btn', function(e){
 $('.button-to-next').on('click', '.retry-btn', function(e){
 
   e.preventDefault();
-  window.location = 'http://clients.ckdt.nl/hiil/rechtwijzer-mobile/proto-3/index.html';
+  window.location = 'http://clients.ckdt.nl/hiil/rechtwijzer-mobile/proto-4/index.html';
 
 });
 
 $('.result .retry').click(function(e) {
 
   e.preventDefault();
-  window.location = 'http://clients.ckdt.nl/hiil/rechtwijzer-mobile/proto-3/index.html';
+  window.location = 'http://clients.ckdt.nl/hiil/rechtwijzer-mobile/proto-4/index.html';
 
 });
 
