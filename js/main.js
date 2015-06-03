@@ -133,7 +133,9 @@ $('.button-to-next').on('click', '.done-btn', function(e){
 $('.button-to-next').on('click', '.retry-btn', function(e){
 
   e.preventDefault();
-  window.location = 'http://clients.ckdt.nl/hiil/rechtwijzer-mobile/proto-4/index.html';
+  $('.result .span').attr('contenteditable','false');
+  $('.result .span').attr('class','span');
+  $('.button-to-next').empty().html(' <a href="cards.html">Continue</a>');
 
 });
 

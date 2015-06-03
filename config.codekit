@@ -543,7 +543,7 @@
 		},
 	"\/js\/vendor\/jquery.ui.touch-punch.min.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/vendor\/jquery.ui.touch-punch.min.js",
 		"outputAbbreviatedPath": "\/js\/vendor\/min\/jquery.ui.touch-punch.min-min.js",
@@ -565,7 +565,7 @@
 		},
 	"\/js\/vendor\/owl.carousel.min.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/vendor\/owl.carousel.min.js",
 		"outputAbbreviatedPath": "\/js\/vendor\/min\/owl.carousel.min-min.js",
@@ -837,6 +837,20 @@
 	],
 "lastSavedByUser": "Stijn Eversdijk",
 "manualImportLinks": {
+	"\/js\/main.js": [
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/js\/vendor\/jquery.ui.touch-punch.min.js",
+			"position": 0,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/js\/vendor\/owl.carousel.min.js",
+			"position": 1,
+			"type": 0
+			}
+		]
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
