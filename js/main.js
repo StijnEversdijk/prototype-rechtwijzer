@@ -84,13 +84,22 @@ $('a').click(handleClick);
 
       e.preventDefault();
       var href = $(this).attr('href');
-      if(!href === '#') {
-        $('#curtain').attr('class', 'visible');
-        setTimeout(function(){
+
+      if( href === '#' ) {
         window.location = target.attr('href');
-      }, 2000);
       } else {
-        window.location = target.attr('href');
+        if (href === "cards.html") {
+          $('#transit-cards-page').addClass('grow');
+          // $('#curtain').attr('class', 'visible');
+          setTimeout(function(){
+            window.location = target.attr('href');
+          }, 1000);
+        } else {
+            $('#curtain').attr('class', 'visible');
+            setTimeout(function(){
+            window.location = target.attr('href');
+            }, 2000);
+          }
       }
 
   }

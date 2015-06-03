@@ -3275,6 +3275,23 @@ main {
       display: block;
       padding: 10px 0; }
 
+#transit-cards-page {
+  position: absolute;
+  top: 250px;
+  left: 230px;
+  width: 4px;
+  height: 4px;
+  z-index: 999;
+  background-color: #343646;
+  opacity: 0;
+  -webkit-transition: -webkit-transform 1s ease-in-out, opacity 0.2s ease-out;
+  transition: transform 1s ease-in-out, opacity 0.2s ease-out; }
+  #transit-cards-page.grow {
+    opacity: 1;
+    -ms-transform: scale(500, 500);
+    -webkit-transform: scale(500, 500);
+    transform: scale(500, 500); }
+
 .complete .card .complete {
   opacity: 1; }
 

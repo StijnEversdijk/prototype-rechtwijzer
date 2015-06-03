@@ -152,3 +152,18 @@
       width: 100%
       display: block
       padding: 10px 0
+
+#transit-cards-page
+  position: absolute
+  top: 250px
+  left: 230px
+  width: 4px
+  height: 4px
+  z-index: 999
+  background-color: $dblue
+  opacity: 0
+  +transition(transform 1s ease-in-out, opacity .2s ease-out)
+
+  &.grow
+    opacity: 1
+    +scale(500)
